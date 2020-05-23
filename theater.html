@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Theater Ticket</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="js/theater.js"></script>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+    <a href="theater.html">Theater</a>
+    <a href="fruit.html">Fruit</a>
+</div>
+
+<br>
+
+<div class="row" style="background-color: white">
+    <div class="column">
+        <div class="card">
+            <div class="container">
+                <form id="form" onsubmit="return getReport()" >
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input required type="text" class="form-control" placeholder="Enter name" id="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email address:</label>
+                        <input required type="email" class="form-control" placeholder="Enter email" id="email">
+                    </div>
+
+                    <div class="form-group">
+                        <select required name="show" id="show">
+                            <option value="79">Phantom of the Opera at £79</option>
+                            <option value="85">Hamilton at £85</option>
+                            <option value="67">Lion King at £67</option>
+                            <option value="83">Miss Shaigon at £83</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="seat">Number of seat:</label>
+                        <input required min="1" type="number" class="form-control" placeholder="Enter seats" id="seat">
+                    </div>
+
+                        <label>E-Ticket</label>
+                        <input required id="method1" value="0" type="radio" class="form-check-input" name="method">
+
+
+                        <label >Box Office</label>
+                        <input required id="method2" value="1.50" type="radio" class="form-check-input" name="method">
+
+
+                        <label >Posted</label>
+                        <input required id="method3" value="3.99" type="radio" class="form-check-input" name="method">
+
+                        <br>
+                        <button type="submit" class="button">Book</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <div class="container" style="background-color: darkgrey; height: 550px">
+                <h3  class="text-center">Transaction Detail</h3>
+                <span id="message1"></span><br>
+                <span id="message2"></span><br>
+                <span id="message3"></span><br>
+                <span id="message4"></span><br>
+                <span id="message5"></span><br>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+<script>
+    document.getElementById("form").addEventListener("submit", function(event){
+        event.preventDefault()
+    });
+</script>

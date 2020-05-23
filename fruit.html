@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fruit Machine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="js/fruits.js"></script>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+    <a href="theater.html">Theater</a>
+    <a href="fruit.html">Fruit</a>
+</div>
+<br>
+
+
+<div class="container">
+    <div class="row">
+
+
+        <div  style="background-color: darkgrey">
+            <div class="row center" style="background-color: black">
+                <span id="credit" style="color: white">0</span><span style="color: white">  Credit</span>
+                <span  id="win" style="color: white">0</span><span style="color: white">  Winning</span>
+            </div>
+
+
+            <div class="row center">
+                <img style="width: 100px" src="image/apple.png" id="pic1">
+                <img style="width: 100px" src="image/orange.png" id="pic2">
+                <img style="width: 100px" src="image/cherries.png" id="pic3">
+            </div>
+
+            <br><br>
+            <div class="row center">
+                <div >
+                    <span  style="color: black; padding: 20px;font-weight: bold" id="message"></span>
+                </div>
+            </div>
+            <br><br>
+
+            <div class="row center">
+                    <button  id="spinbtn" class="btn btn-info" type="button" onclick="choosePic()" >Spin</button>
+                    <button id="creditbtn" onclick="getCredit();" type="button" class="btn btn-warning">Credit</button>
+                <button id="winbtn" onclick="collect();" type="button" class="btn btn-success" >Collect</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+        var a = document.getElementById('credit').innerHTML;
+        if (a == 0) {
+            document.getElementById('spinbtn').disabled = true;
+        }
+        if (a > 0) {
+            document.getElementById('spinbtn').disabled = false;
+        }
+
+        var b = document.getElementById('win').innerHTML;
+        if (b == 0) {
+            document.getElementById('winbtn').disabled = true;
+        }
+        if (b > 0) {
+            document.getElementById('winbtn').disabled = false;
+        }
+</script>
